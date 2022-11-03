@@ -1,0 +1,41 @@
+<%- include('../partials/head/head.ejs') %>
+
+    <body>
+        <%- include('../partials/navbar/navbar.ejs') %>
+            <div class="container main-container" style="margin-top: 100px;">
+
+                <% let date = new Date(heroe.aparicion)
+                    date = date.getFullYear()
+                %>
+                <h1 class="animated fadeIn"><%= heroe.nombre.toUpperCase() %>  <small>(<%= date %>)</small></h1>
+                <hr>
+
+                <div class="row animated fadeIn">
+                    <div class="col-md-4">
+                        <img src="/img/<%= heroe.img %> " class="img-fluid" [alt]="heroe.nombre" srcset="">
+                        <br><br>
+                        <a href="/heroes" class="btn btn-outline-success btn-block">Regresar</a>
+                        <a href="/heroes/detail/edit/<%= heroe.id %>" class="btn btn-outline-primary btn-block">Editar</a>
+                        <form action="/heroes/detail/delete/<%= heroe.id %>?_method=DELETE" method="POST" style="display: inline-flex ;margin-top: 2px;">
+							<button type="submit" class="btn btn-outline-danger btn-block">Eliminar</button>
+						</form>
+                        <!-- <a href="/heroes/detail/delete/<%= heroe.id %>" class="btn btn-outline-danger btn-block">Eliminar</a> -->
+                    </div>
+                    <div class="col-md-8">
+                        <h3><%= heroe.nombre %> </h3>
+                        <hr>
+                        <p>
+                           <%= heroe.bio %> 
+                        </p>
+                        <div>
+                            <% if (heroe.casa == 'Marvel') { %>
+                                <img class="img-logo" src="/img/marvel-logo.png" alt="Marvel" style="width: 120px;">
+                            <% } %>
+                            <% if (heroe.casa == 'DC') { %>
+                                <img class="img-logo" src="/img/dc-logo.jpg" alt="DC" style="width: 120px;">
+                            <% } %>
+                        </div>
+                    </div>
+
+                </div>
+                <%- include('../partials/footer/footer.ejs') %>

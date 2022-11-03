@@ -1,0 +1,30 @@
+<%- include('../partials/head/head.ejs') %>
+
+    <body>
+        <%- include('../partials/navbar/navbar.ejs') %>
+            <div class="container main-container" style="margin-top: 100px;">
+                <h1>Héroes <small style="font-weight: 300">Marvel y DC</small></h1>
+                <hr>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                    <% heroes.forEach(heroe=> { %>
+
+                        <div class="col">
+                            <div class="card animated fadeIn">
+                                <img src="/img/<%= heroe.img %> " class="card-img-top img-fluid" alt="<%= heroe.nombre %>">
+                                <div class="card-body">
+                                    <h4 class="card-title"><%= heroe.nombre %></h4>
+                                    <p class="card-text"><%= heroe.bio %></p>
+                                    <p class="card-text"><small class="text-muted"><%= heroe.aparicion %></small></p>
+                                    <a href="/heroes/detail/<%= heroe.id %>" class="btn btn-outline-primary btn-block">Ver más...</a>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <% }); %>
+
+                </div>
+            </div>
+            <%- include('../partials/footer/footer.ejs') %>

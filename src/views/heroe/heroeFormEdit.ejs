@@ -1,0 +1,65 @@
+<%- include('../partials/head/head.ejs') %>
+
+    <body>
+        <%- include('../partials/navbar/navbar.ejs') %>
+            <div class="container main-container" style="margin-top: 100px;">
+                <div class="h-100 p-5 bg-light border rounded-3 animated fadeIn">
+                    <div class="card container animated fadeIn">
+                        <div class="row animated fadeIn">
+                            <div class="col-md-12">
+                                <div class="well well-sm">
+                                    <form class="form-horizontal" method="post"  action="/heroes/detail/edit/<%= heroe.id %>?_method=PUT" enctype="multipart/form-data">
+                                        <fieldset>
+                                            <br>
+                                            <legend class="text-center header">Actualizar Héroe</legend>
+                                            <br><br>
+                                            <div class="form-group">
+                                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                                <div class="col-md-4">
+                                                    <input id="name" name="name" type="text" placeholder="Nombre.." class="form-control" value="<%= heroe.nombre %>">
+                                                </div>
+                                            </div>
+                                            <div class="form-group mt-2">
+                                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
+                                                <div class="col-md-12">
+                                                    <textarea class="form-control" id="bio" name="bio" placeholder="Ingrese una biografia" rows="7" ><%= heroe.bio %></textarea>
+                                                </div>
+                                            </div>
+    
+                    
+                                            <div class="form-group mt-2">
+                                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
+                                                <div class="col-md-4">
+                                                    <input class="form-control" id="imgFile" name="imgFile" type="file" />
+                                                </div>
+                                            </div>
+                    
+                                            <div class="form-group mt-2">
+                                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
+                                                <div class="col-md-2">
+                                                    <input id="date" name="date" type="date" placeholder="Fecha aparición" class="form-control" value="<%= heroe.aparicion %>">
+                                                </div>
+                                            </div>
+    
+                                            <div class="form-group mt-2">
+                                                <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
+                                                <div class="col-md-2">
+                                                    <input id="casa" name="casa" type="text" placeholder="Casa.." class="form-control" value="<%= heroe.casa %>">
+                                                </div>
+                                            </div>
+                    
+                    
+                                            <div class="form-group mt-3 mb-3">
+                                                <div class="col-md-12 text-center">
+                                                    <button type="submit" class="btn btn-success btn-lg">Actualizar</button>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <%- include('../partials/footer/footer.ejs') %>
