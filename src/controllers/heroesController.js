@@ -15,7 +15,7 @@ const controller = {
 		})
 	},
 
-	// (get) Detail - Detalle de un Heroe
+	// (get) Detail - Detalle de un Héroe
 	detail: (req, res) => {
 		const id = req.params.id;
 		const heroes = getHeroes();
@@ -32,7 +32,7 @@ const controller = {
 	
 	// (post) Create -  Método para guardar la info
 	store: (req, res) => {
-		//Guradamos el heroe
+		//Guardamos el heroe
 
 		const image = req.file ? req.file.filename : 'default-image.png';
 		const heroes = getHeroes();
@@ -49,7 +49,7 @@ const controller = {
 		res.redirect("/heroes")
 	},
 
-	// (get) Update - Formulario para editar un Heroe
+	// (get) Update - Formulario para editar un Héroe
 	edit: (req, res) => {
 		const id = req.params.id;
 		const heroes = getHeroes();
@@ -80,9 +80,9 @@ const controller = {
 		res.redirect("/heroes")
 	},
 
-	// (delete) Delete - Método para eliminar un Heroe
+	// (delete) Delete - Método para eliminar un Héroe
 	destroy : (req, res) => {
-		//Eliminamos el Heroe que llegó por parámetro su ID
+		//Eliminamos el Héroe que llegó por parámetro su ID
 		let id = req.params.id;
 		const heroes = getHeroes();
 		const heroeIndex = heroes.findIndex(heroe => heroe.id == id);
