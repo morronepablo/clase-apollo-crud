@@ -25,14 +25,14 @@ const controller = {
 	   })
 	},
 
-	// (get) Create - Formulario para crear Heroe
+	// (get) Create - Formulario para crear un Héroe
 	create: (req, res) => {
 		res.render('heroe/heroeFormCreate')
 	},
 	
 	// (post) Create -  Método para guardar la info
 	store: (req, res) => {
-		//Guardamos el heroe
+		//Guardamos el héroe
 
 		const image = req.file ? req.file.filename : 'default-image.png';
 		const heroes = getHeroes();
